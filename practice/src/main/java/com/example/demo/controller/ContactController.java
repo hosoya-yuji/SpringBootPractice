@@ -23,14 +23,14 @@ public class ContactController {
 		
 		mv.addObject("lastName", lastName);
 		mv.addObject("firstName", firstName);
-        mv.addObject("email", email);
-        mv.addObject("phone", phone);
-        mv.addObject("zipCode", zipCode);
-        mv.addObject("address", address);
-        mv.addObject("buildingName", buildingName);
-        mv.addObject("contactType", contactType);
-        mv.addObject("body", body);
-        
-        return mv;
+		mv.addObject("email", email);
+		mv.addObject("phone", phone);
+		mv.addObject("zipCode", zipCode);
+		mv.addObject("address", address);
+		mv.addObject("buildingName", buildingName);
+		mv.addObject("contactType", contactType);
+		mv.addObject("body", body);
+
+		return mv;
 	}
 }
