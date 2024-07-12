@@ -1,6 +1,7 @@
 package com.example.demo.form;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -11,6 +12,9 @@ import lombok.Data;
 
 @Data
 public class ContactForm implements Serializable {
+
+	private Long id;
+
 	@NotBlank
 	private String lastName;
 
@@ -21,12 +25,11 @@ public class ContactForm implements Serializable {
 	@Email
 	private String email;
 
-	@NotBlank
 	@Size(min = 10, max = 11)
 	private String phone;
 
+	@Pattern(regexp = "^[0-9]{3}-[0-9]{4}$")
 	@NotBlank
-	@Pattern(regexp = "[0-9]{3}[-]{0,1}[0-9]{4}")
 	private String zipCode;
 
 	@NotBlank
@@ -37,7 +40,10 @@ public class ContactForm implements Serializable {
 
 	@NotEmpty
 	private String contactType;
-
+	
 	@NotBlank
 	private String body;
+
+	private Date createdAt;
+	private Date updatedAt;
 }
